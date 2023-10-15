@@ -1,5 +1,5 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import './globals.css';
+import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +11,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <container>
+          <div className="flex w-full justify-center my-5"><img src="/rick_and_morty.png" alt="Logo Rick and Morty" className="w-8/12 sm:w-5/12 max-w-sm" /></div>
+
+          {children}
+        </container >
+      </body>
     </html>
   )
 }
