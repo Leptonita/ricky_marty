@@ -18,13 +18,13 @@ export default async function PersonatgesPage({ params }) {
 
     // console.log(params);
     /*   const paginaNum = ((params && params.pagina > 1 && params.pagina < 43) ? params.pagina : 1) */
-
+    let limit = 42;
     let paginaNum;
     if (params) {
-        if (params.pagina > 1 && params.pagina < 43) {
+        if (params.pagina > 1 && params.pagina <= limit) {
             paginaNum = params.pagina;
-        } else if (params.pagina > 43) {
-            paginaNum = 42;
+        } else if (params.pagina > limit + 1) {
+            paginaNum = limit;
         } else {
             paginaNum = 1;
         }
@@ -32,11 +32,11 @@ export default async function PersonatgesPage({ params }) {
         paginaNum = 1;
     }
 
-    console.log(paginaNum);
+    //console.log(paginaNum);
     const data = await getData(paginaNum);
     const totalCharacters = await data.info.count;
 
-    console.log(totalCharacters);
+    //console.log(totalCharacters);
     const characters = await data.results;
 
     const charactersList = characters.map((character) => (
