@@ -1,12 +1,12 @@
-import Character from "../components/Character";
+import apiUrl from '../data/apiUrl';
+import { useCharacterList } from '../hooks/useCharacterList';
 
 async function getData(numPage) {
-  const res = await fetch(`https://rickandmortyapi.com/api/character?page=${numPage}`)
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+  const res = await fetch(`${apiUrl}?page=${numPage}`)
+
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
+    throw new Error('problema amb dades')
   }
   return res.json();
 }
@@ -16,18 +16,9 @@ export default async function Home() {
   const data = await getData(pageData);
   const characters = await data.results;
 
-  const charactersList = characters.map((character) => (
-    <Character key={character.id}
-      idCh={character.id}
-      nameCharacter={character.name}
-      speciesCh={character.species}
-      originCh={character.origin.name}
-      imageCh={character.image}
-    />));
-
+  const charactersList = useCharacterList(characters);
 
   return (
-
     <main className="flex flex-wrap w-full justify-center">
       {charactersList}
     </main>

@@ -1,8 +1,6 @@
 export default function Loading() {
-
     return (
-        <>
-            <div className="bg-rose-600 m-10">Loading ...</div>
-        </>
+
+        <div id="loader" className="errorH flex flex-col justify-center items-center"> </div>
     );
 }

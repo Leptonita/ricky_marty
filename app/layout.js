@@ -1,8 +1,9 @@
+import { Suspense } from 'react';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import Nav from '../components/Nav';
-
+import Loading from './loading';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -15,13 +16,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <container>
-
           <Link href="/personatges/1"><div className="flex w-full justify-center my-5">
             <img src="/rick_and_morty.png" alt="Logo Rick and Morty" className="w-8/12 sm:w-5/12 max-w-sm" /></div>
           </Link>
-
           <Nav />
-          {children}
+          <Suspense fallback={<Loading />}>
+            {children}
+          </Suspense>
         </container >
       </body>
     </html>

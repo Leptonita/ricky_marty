@@ -1,11 +1,12 @@
 "use client";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import LinksRound from './LinksRound';
+
 const Nav = () => {
 
     const pathname = usePathname();
     const numPage = Number(pathname.split("/")[2]);
-    console.log("par", numPage);
 
     let numArray = [];
     if (numPage > 0 && numPage < 37) {
@@ -19,34 +20,43 @@ const Nav = () => {
     }
 
     const numLinks = numArray.map((num) => (
-        <li key={num} className='mx-4 underline'>
+        <LinksRound key={num} >
             <Link href={`/personatges/${num}`}>{num}</Link>
-        </li>
+        </LinksRound>
     ));
 
     return (
-        <nav className="flex flex-wrap justify-center my-7">
-            <ul className="flex flex-wrap justify-center">
+        <nav id="topnav" className="flex flex-wrap justify-center my-7 ">
+            <ul className="flex flex-wrap justify-center bg-slate-500 bg-opacity-20 p-2
+            rounded-full shadow-lg ">
                 {(numPage > 1 && numPage < 37) &&
                     (<>
-                        <li className='mx-4 underline'>
-                            <Link href={`/personatges/${numPage - 1}`}>{numPage - 1}</Link>
-                        </li>
+                        <LinksRound className="text-xs">
+                            <Link href={`/personatges/${numPage - 1}`}> {"<"} </Link>
+                        </LinksRound>
                         <span> ...</span>
                     </>
                     )}
 
                 {numPage >= 37 &&
                     (<>
-                        <li className='mx-4 underline'>
-                            <Link href={`/personatges/36`}>36</Link>
-                        </li>
+                        <LinksRound className="text-xs">
+                            <Link href={`/personatges/36`}> {"<"} </Link>
+                        </LinksRound>
                         <span> ...</span>
                     </>)
                 }
 
-
                 {numLinks}
+                {numPage == 1 &&
+                    (<>
+                        <span> ... </span>
+                        <LinksRound className="text-xs">
+                            <Link href={`/personatges/20`}> {"20"} </Link>
+                        </LinksRound>
+
+                    </>)
+                }
             </ul>
         </nav>
     )
