@@ -24,9 +24,12 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
+
 .errorH {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 200px);
 }
 
 
@@ -35,12 +38,14 @@ body {
   left: 50%;
   top: 50%;
   z-index: 1;
-  width: 120px;
-  height: 120px;
-  margin: -76px 0 0 -76px;
-  border: 16px solid #f3f3f3;
+  width: 60px;
+  height: 60px;
+  margin: -5px 0 0 -30px;
+  border: 7px dotted #cbe908;
   border-radius: 50%;
-  border-top: 16px solid #7cdb34;
+  border-left: 7px dotted #e9cb08;
+  border-top: 7px dotted #7cdb34;
+  border-bottom: 7px dotted #34dbae;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }

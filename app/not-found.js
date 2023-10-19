@@ -6,7 +6,7 @@ export default function NotFound() {
     return (
 
         <div className='errorH flex flex-col justify-center items-center'>
-            <h2>404 - Ups, tenim problemes!</h2>
+            <h2>404 - Ups, no trobem el que ens demanes ;(</h2>
             <br />
             <Link href="/personatges/1">
                 <span className='underline'> Torna a la pàgina principal</span>

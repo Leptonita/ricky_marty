@@ -1,6 +1,6 @@
 export default function Loading() {
     return (
 
-        <div id="loader" className="errorH flex flex-col justify-center items-center"> </div>
+        <div id="loader" className="flex flex-col justify-center items-center">:·:</div>
     );
 }

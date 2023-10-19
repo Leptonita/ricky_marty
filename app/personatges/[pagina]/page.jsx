@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import apiUrl from '../../../data/apiUrl';
 import { useCharacterList } from '../../../hooks/useCharacterList';
-import LinksRound from '../../../components/LinksRound';
+import LinksRound from '../../components/LinksRound';
+import { notFound } from "next/navigation";
 
 async function getData(numPage) {
     const res = await fetch(`${apiUrl}?page=${numPage}`)
     if (!res.ok) {
+        notFound();
         // This will activate the closest `error.js` Error Boundary
-        throw new Error('... problema amb dades')
+        //throw new Error('... problema amb dades')
     }
     return res.json()
 }

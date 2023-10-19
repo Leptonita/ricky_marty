@@ -1,10 +1,15 @@
 import { Suspense } from 'react';
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Raleway } from 'next/font/google';
+import Image from 'next/image';
 import Link from 'next/link';
-import Nav from '../components/Nav';
+import Nav from './components/Nav';
 import Loading from './loading';
-const inter = Inter({ subsets: ['latin'] })
+const raleway = Raleway({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap'
+})
 
 export const metadata = {
   title: 'Prueba Frontend Hackathon Jump2Digital',
@@ -14,12 +19,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={raleway.className}>
         <container className="min-h-screen">
           <Link href="/personatges/1"><div className="flex w-full justify-center my-5">
-            <img src="/rick_and_morty.png" alt="Logo Rick and Morty" className="w-8/12 sm:w-5/12 max-w-sm" /></div>
+            <Image src="/rick_and_morty.png" alt="Logo Rick and Morty"
+              width={213.33} height={65} quality={80} priority={true}
+              className="w-8/12 sm:w-5/12 max-w-sm" /></div>
           </Link>
-          <Nav />
+          {/*  <Nav /> */}
           <Suspense fallback={<Loading />}>
             {children}
           </Suspense>

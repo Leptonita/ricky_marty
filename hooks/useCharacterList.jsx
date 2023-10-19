@@ -1,4 +1,4 @@
-import Character from '../components/Character';
+import Character from '../app/components/Character';
 
 export function useCharacterList(charactersArr) {
 
