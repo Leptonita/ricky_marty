@@ -93,7 +93,7 @@ const InputDropdown = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row justify-center items-center">
+      <div className="flex flex-col md:flex-row justify-center items-center mt-6">
         <label htmlFor="datos" className="text-lime-400 font-light"><strong>Buscar personatge: </strong> </label>
         <input className="px-3 py-1 m-2 w-64 rounded-2xl text-slate-700 shadow-sm"
           type="text"
