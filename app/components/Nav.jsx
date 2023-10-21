@@ -26,7 +26,7 @@ const Nav = () => {
     ));
 
     return (
-        <nav id="topnav" className="flex flex-wrap justify-center my-7 ">
+        <nav id="topnav" className="flex flex-wrap justify-center mt-2 mb-7 ">
             <ul className="flex flex-wrap justify-center items-center bg-slate-500 bg-opacity-20 p-2
             rounded-full shadow-lg ">
                 {(numPage > 1 && numPage < 37) &&
