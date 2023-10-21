@@ -22,9 +22,9 @@ export default function RootLayout({ children }) {
       <body className={raleway.className}>
         <container className="min-h-screen">
           <Link href="/personatges/1"><div className="flex w-full justify-center my-5">
-            <Image src="/rick_and_morty.png" alt="Logo Rick and Morty"
-              width={213.33} height={65} quality={80} priority={true}
-              className="w-8/12 sm:w-5/12 max-w-sm" /></div>
+            <img src="/rick_and_morty.png" alt="Logo Rick and Morty"
+              width={213.33} height={65}
+              className="w-8/12 sm:w-5/12 max-w-sm mt-2 mb-4" /></div>
           </Link>
           {/*  <Nav /> */}
           <Suspense fallback={<Loading />}>

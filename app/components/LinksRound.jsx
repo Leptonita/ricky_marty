@@ -1,7 +1,7 @@
 
 const LinksRound = ({ children }) => {
     return (
-        <li className='list-none w-8 mx-1 sm:mx-3 bg-lime-400 p-1 bg-opacity-70 rounded-full text-center text-rose-800 font-semibold'>
+        <li className='numberspage list-none min-w-min mx-2 sm:mx-3 bg-lime-400 py-1 px-3 bg-opacity-90 rounded-full flex justify-center text-rose-700 hover:text-white font-semibold'>
             {children}
         </li>
     )

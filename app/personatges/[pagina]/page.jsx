@@ -2,6 +2,7 @@ import Link from 'next/link';
 import apiUrl from '../../../data/apiUrl';
 import { useCharacterList } from '../../../hooks/useCharacterList';
 import LinksRound from '../../components/LinksRound';
+import UpArrow from '../../components/UpArrow';
 import { notFound } from "next/navigation";
 
 async function getData(numPage) {
@@ -44,8 +45,10 @@ export default async function PersonatgesPage({ params }) {
                 {charactersList}
             </main>
             <div className='flex justify-center m-5'>
-                <LinksRound className="text-lg">
-                    <Link href="#topnav"> ^ </Link>  </LinksRound>
+                <LinksRound>
+                    <Link href="#topnav">
+                        <UpArrow />
+                    </Link>  </LinksRound>
             </div>
 
         </>
